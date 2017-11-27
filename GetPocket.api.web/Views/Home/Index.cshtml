@@ -1,0 +1,78 @@
+﻿@model GetPocket.api.web.Models.IndexViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/ts/index.js"></script>
+    <script>
+        var CurrentBasePage = new IndexPage();
+    </script>
+}
+
+<div class="jumbotron">
+    <h1>GetPocket.SimpleApi Example</h1>
+    <p class="lead">GetPocket.SimpleApi is Simple set of classes to interoperate with GetPocket through Rest API and OAuth2 authentication.</p>
+    <p><a href="https://getpocketsimpleapi.codeplex.com/" target="_blank" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Connect to the API</h2>
+        @if (ViewBag.Connected == true)
+        {
+            <p class="well lead text-success">You are connected under @ViewBag.PocketUser</p>
+        }
+        else
+        {
+            using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ConsumerKey)
+                    @Html.TextBoxFor(model => model.ConsumerKey, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ConsumerKey, null, new { @class = "small text-danger" })
+                    <span class="help-block">If you have not obtained a consumer key yet, you can register for one at <a href="http://getpocket.com/developer/apps/new" target="_blank">http://getpocket.com/developer/apps/new</a></span>
+
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            }
+        }
+    </div>
+    <div class="col-md-4">
+        <h2>Test the Api</h2>
+        @if (ViewBag.Connected == true)
+        {
+            <button id="testSSD" class="btn btn-primary btn-lg">click here for retrieve info from GetPocket (server-side)</button>
+            <ul class="media-list" id="itemList"></ul>
+        }
+        else
+        {
+            <p>Enter the consumer key and click on submit to see result.</p>
+        }
+    </div>
+</div>
+<script id="list-template" type="text/x-handlebars-template">
+    {{#each list}}
+    <li class="media">
+        <a class="pull-left" href="#">
+            <img class="media-object img-responsive img-rounded" src="{{image.src}}" alt="...">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading"> {{resolved_title}}</h4>
+            <p class="small">{{excerpt}}</p>
+        </div>
+    </li>
+    {{/each}}
+</script>

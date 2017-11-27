@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>mockup-std</name>
+    </assembly>
+    <members>
+        <member name="T:GetPocket.api.web.Controllers.ValuesControllerMock">
+            <summary>
+            Use just for demonstate document capabilies of WebApi HelpPages
+            </summary>
+        </member>
+        <member name="M:GetPocket.api.web.Controllers.ValuesControllerMock.Get">
+            <summary>
+            Gets some very important data from the server.
+            </summary>
+        </member>
+        <member name="M:GetPocket.api.web.Controllers.ValuesControllerMock.Get(System.Int32)">
+            <summary>
+            Looks up some data by ID.
+            </summary>
+            <param name="id">The ID of the data.</param>
+        </member>
+    </members>
+</doc>
