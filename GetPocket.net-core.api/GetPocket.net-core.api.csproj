@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>Pocket.netcore.api</RootNamespace>
+    <PackageId>GetPocket.SimpleAPI.Core</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>R. Messié</Authors>
+    <Company />
+    <Product>GetPocket.SimpleAPI.Core</Product>
+    <Description>This is a very simple class to interoperate with Pocket (http://getpocket.com) through Rest API and OAuth2 authentication for .Net Core</Description>
+    <PackageProjectUrl>https://github.com/RaynaldM/Pocket.SimpleAPI/</PackageProjectUrl>
+    <RepositoryUrl></RepositoryUrl>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <Copyright>Raynald Messié</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="RestSharp.NetCore" Version="105.2.3" />
+  </ItemGroup>
+
+</Project>
